@@ -5,7 +5,7 @@ import static org.springframework.http.HttpStatus.*
 
 class UrokController {
 
-    UrokServiceInterface urokService
+    UrokService urokService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 

@@ -22,14 +22,11 @@ class BootStrap {
         // urok
         Random rnd = new Random()
         Integer i = 0
-        for (i=1; i<10; i++) {
-            Urok urok = new Urok(datum: new Date()+i, urokovaSazba: rnd.nextFloat()+i, uver: [id: 1] )
-            println(urok.properties)
-            urok.save()
+        for (i=1; i<6; i++) {
+            Urok urok = new Urok(platnostOd: new Date()+i, urokovaSazba: rnd.nextFloat()*10, uver: [id: 1]).save()
         }
-
-        // zaznamy
 /*
+        // zaznamy
         Zaznam z1 = new Zaznam(typZaznamu: TypZaznamu.CERPANI, castka: 369.5, datum: new Date(), uver: [id:1], urokovaSazba: 1.5, varSymb: 111).save()
         Zaznam z2 = new Zaznam(typZaznamu: TypZaznamu.PREDPIS, castka: 1.5, datum: new Date()+10, uver: [id:3], urokovaSazba: 2, varSymb: 9876543210).save()
         Zaznam z3 = new Zaznam(typZaznamu: TypZaznamu.SPLATKA, castka: 20.5, datum: new Date()+20, uver: [id:3], urokovaSazba: 3.3, varSymb: 333).save()
