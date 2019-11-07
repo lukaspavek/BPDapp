@@ -8,13 +8,14 @@ class Uver {
     Date platnostOd
     BigDecimal maxUverovyRamec
     Integer delkaRoku
-    BigDecimal urokovaSazba
+    //BigDecimal urokovaSazba
     Double varSymb
     boolean mimoradnaSplatka
     boolean predcasneUkonceni
+    boolean interni
     String poznamka
 
-    static hasMany = [zaznamy : Zaznam]
+    static hasMany = [uroky : Urok, zaznamy : Zaznam]
     static belongsTo = [spolecnost: Spolecnost]
 
     static constraints = {

@@ -1,8 +1,7 @@
 package bpdapp
 
 import bpdapp.enumeration.TypZaznamu
-import bpdapp.uver.Uver
-import bpdapp.uver.Zaznam
+import bpdapp.uver.*
 
 class BootStrap {
 
@@ -19,6 +18,13 @@ class BootStrap {
         Uver u3 = new Uver(spolecnost:[id:1], nazevUveru: "Úvěr 3", platnostOd: new Date()+2, maxUverovyRamec: 300, poznamka: "Pozn3", predcasneUkonceni: true, delkaRoku: 365, urokovaSazba: 3.05).save()
         Uver u4 = new Uver(spolecnost:[id:2], nazevUveru: "Úvěr 4", platnostOd: new Date()+3, maxUverovyRamec: 400, poznamka: "Pozn4", predcasneUkonceni: true, delkaRoku: 360, urokovaSazba: 4.92).save()
         Uver u5 = new Uver(spolecnost:[id:2], nazevUveru: "Úvěr 5", platnostOd: new Date()+4, maxUverovyRamec: 500, poznamka: "Pozn5", predcasneUkonceni: true, delkaRoku: 365, urokovaSazba: 5.66).save()
+
+        // urok
+        Random rnd = new Random()
+        Integer i = 0
+        for (i=1; i<10; i++) {
+            new Urok(datum: new Date()+(i*3), urokovaSazba: rnd.nextFloat(), uver: [id: 1] ).save()
+        }
 
         // zaznamy
 /*
