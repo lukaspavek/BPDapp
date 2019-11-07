@@ -23,7 +23,9 @@ class BootStrap {
         Random rnd = new Random()
         Integer i = 0
         for (i=1; i<10; i++) {
-            new Urok(datum: new Date()+(i*3), urokovaSazba: rnd.nextFloat(), uver: [id: 1] ).save()
+            Urok urok = new Urok(datum: new Date()+i, urokovaSazba: rnd.nextFloat()+i, uver: [id: 1] )
+            println(urok.properties)
+            urok.save()
         }
 
         // zaznamy
