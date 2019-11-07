@@ -13,11 +13,11 @@ class BootStrap {
         Spolecnost spol3 = new Spolecnost(nazev: "Ječmínek a.s.").save()
 
         // uvery
-        Uver u1 = new Uver(spolecnost:[id:1], nazevUveru: "Úvěr 1", platnostOd: new Date(),   maxUverovyRamec: 100, poznamka: "Pozn1", predcasneUkonceni: true, delkaRoku: 365, urokovaSazba: 1.25).save()
-        Uver u2 = new Uver(spolecnost:[id:1], nazevUveru: "Úvěr 2", platnostOd: new Date()+1, maxUverovyRamec: 200, poznamka: "Pozn2", predcasneUkonceni: true, delkaRoku: 360, urokovaSazba: 2.40).save()
-        Uver u3 = new Uver(spolecnost:[id:1], nazevUveru: "Úvěr 3", platnostOd: new Date()+2, maxUverovyRamec: 300, poznamka: "Pozn3", predcasneUkonceni: true, delkaRoku: 365, urokovaSazba: 3.05).save()
-        Uver u4 = new Uver(spolecnost:[id:2], nazevUveru: "Úvěr 4", platnostOd: new Date()+3, maxUverovyRamec: 400, poznamka: "Pozn4", predcasneUkonceni: true, delkaRoku: 360, urokovaSazba: 4.92).save()
-        Uver u5 = new Uver(spolecnost:[id:2], nazevUveru: "Úvěr 5", platnostOd: new Date()+4, maxUverovyRamec: 500, poznamka: "Pozn5", predcasneUkonceni: true, delkaRoku: 365, urokovaSazba: 5.66).save()
+        Uver u1 = new Uver(spolecnost:[id:1], nazevUveru: "Úvěr 1", platnostOd: new Date(),   platnostDo: new Date()+360, maxUverovyRamec: 100, poznamka: "Pozn1", predcasneUkonceni: true, delkaRoku: 365, urokovaSazba: 1.25, interni: true, denSplatky: 5, varSymb: 111).save()
+        Uver u2 = new Uver(spolecnost:[id:1], nazevUveru: "Úvěr 2", platnostOd: new Date()+1, platnostDo: new Date()+360, maxUverovyRamec: 200, poznamka: "Pozn2", predcasneUkonceni: true, delkaRoku: 360, urokovaSazba: 2.40, interni: false, denSplatky: 10, varSymb: 222).save()
+        Uver u3 = new Uver(spolecnost:[id:1], nazevUveru: "Úvěr 3", platnostOd: new Date()+2, platnostDo: new Date()+360, maxUverovyRamec: 300, poznamka: "Pozn3", predcasneUkonceni: true, delkaRoku: 365, urokovaSazba: 3.05, interni: false, denSplatky: 15, varSymb: 333).save()
+        Uver u4 = new Uver(spolecnost:[id:2], nazevUveru: "Úvěr 4", platnostOd: new Date()+3, platnostDo: new Date()+360, maxUverovyRamec: 400, poznamka: "Pozn4", predcasneUkonceni: true, delkaRoku: 360, urokovaSazba: 4.92, interni: true, denSplatky: 20, varSymb: 444).save()
+        Uver u5 = new Uver(spolecnost:[id:2], nazevUveru: "Úvěr 5", platnostOd: new Date()+4, platnostDo: new Date()+360, maxUverovyRamec: 500, poznamka: "Pozn5", predcasneUkonceni: true, delkaRoku: 365, urokovaSazba: 5.66, interni: true, denSplatky: 25, varSymb: 111).save()
 
         // urok
         Random rnd = new Random()
