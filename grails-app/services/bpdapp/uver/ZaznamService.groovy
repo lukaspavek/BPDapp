@@ -25,7 +25,7 @@ class ZaznamService implements ZaznamServiceInterface {
 
     @Override
     void delete(Serializable id) {
-        Zaznam.deleteAll(id)
+        Zaznam.deleteAll(Zaznam.get(id))
     }
 
     @Override
@@ -78,8 +78,8 @@ class ZaznamService implements ZaznamServiceInterface {
     }
 
     Zaznam findPrevZaznam(Zaznam zaznam) {
-        Zaznam prevZaznam = null
-        def posledni
+        //Zaznam prevZaznam = null
+        def posledni = null
 
         def seznam = Zaznam.findAllByUver(Uver.get(zaznam.uverId)).sort() {it.datum}
         def var = seznam.findAll {it.datum < (zaznam.datum)}
@@ -138,12 +138,8 @@ class ZaznamService implements ZaznamServiceInterface {
             println("zustatek pro prvni zaznam = " + zaznam.castka)
             zaznam.zustatek = zaznam.castka
         } else {
-            Integer korekce
-            if (zaznam.typZaznamu == TypZaznamu.SPLATKA) {
-                korekce = (1)
-            } else if (zaznam.typZaznamu == TypZaznamu.CERPANI) {
-                korekce = (-1)
-            }
+            Integer korekce = 1
+            if (zaznam.typZaznamu == TypZaznamu.CERPANI) { korekce = (-1) }
 
             def prevZ = findPrevZaznam(zaznam).zustatek.toBigDecimal()
             def urok = getUrok(zaznam).toBigDecimal()

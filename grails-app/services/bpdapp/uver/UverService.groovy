@@ -54,7 +54,7 @@ class UverService implements UverServiceInterface {
 
     @Override
     void delete(Serializable id) {
-        Uver.deleteAll(id)
+        Uver.deleteAll(Uver.get(id))
     }
 
     @Override

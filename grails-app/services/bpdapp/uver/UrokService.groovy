@@ -23,7 +23,7 @@ class UrokService implements UrokServiceInterface {
 
     @Override
     void delete(Serializable id) {
-        Urok.deleteAll(id)
+        Urok.deleteAll(Urok.get(id))
     }
 
     @Override
